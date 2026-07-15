@@ -17,3 +17,29 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.text-primary {
+  color: #ed1e24; /* Tailwind's blue-700 */
+}
+.text-secondary {
+  color: #f47421; /* Tailwind's blue-700 */
+}
+.text-tertiary {
+  color: #ffcc49; /* Tailwind's blue-700 */
+}
+.text-accent {
+  color: #262626; /* Tailwind's blue-700 */
+}
+
+.bg-primary {
+  background-color: #ed1e24; /* Tailwind's blue-700 */
+}
+.bg-secondary {
+  background-color: #f47421; /* Tailwind's blue-700 */
+}
+.bg-tertiary {
+  background-color: #ffcc49; /* Tailwind's blue-700 */
+}
+.bg-accent {
+  background-color: #262626; /* Tailwind's blue-700 */
+}
