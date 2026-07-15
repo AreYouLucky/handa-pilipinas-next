@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${inter.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${inter.variable} scroll-slim h-full antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-white">
         <Navbar />

@@ -87,11 +87,11 @@ export default function Footer({
                             className="inline-flex rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                         >
                             <Image
-                                src="/assets/images/logos/DOST.png"
+                                src="/assets/images/logos/DOSTHOR.png"
                                 alt="Department of Science and Technology"
-                                width={300}
-                                height={103}
-                                className="h-auto w-64 object-contain sm:w-72"
+                                width={400}
+                                height={400}
+                                className="h-auto w-64 object-contain sm:w-120 "
                             />
                         </a>
 

@@ -35,16 +35,16 @@ export default function NavLinks({
             onMouseEnter={() => setActive(true)}
             className={
                 isMobile
-                    ? `group flex items-center gap-3 rounded-xl px-4 py-3 text-base font-semibold transition-colors ${isActive
+                    ? `group flex items-center gap-3 rounded-full px-4 py-3 text-base font-semibold transition-all ${isActive
                         ? 'bg-red-50 text-[#ED1E24]'
                         : 'text-slate-600 hover:bg-slate-50 hover:text-slate-950'
                     }`
-                    : `group relative flex items-center gap-2 rounded-xl px-4 py-2 text-[12.4px] font-semibold tracking-[0.01em] transition-all duration-200 ${isInverted
+                    : `group relative flex items-center gap-2 rounded-full px-4 py-2 text-[12.4px] font-semibold tracking-[0.01em] transition-all duration-200 ${isInverted
                         ? isActive
-                            ? 'bg-white text-primary shadow-sm'
+                            ? 'bg-white text-primary shadow-sm scale-110'
                             : 'text-white/90 hover:bg-white/12 hover:text-white'
                         : isActive
-                            ? 'bg-primary text-white shadow-sm ring-1 ring-slate-200/70'
+                            ? 'scale-110 text-primary rounded-none '
                             : 'text-accent hover:bg-white/70 hover:text-slate-950'
                     }`
             }

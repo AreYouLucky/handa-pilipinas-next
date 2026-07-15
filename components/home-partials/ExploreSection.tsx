@@ -1,13 +1,20 @@
 import Image from 'next/image';
 import type { ReactElement } from 'react';
+import { FiFileText, FiGrid, FiPlayCircle } from 'react-icons/fi';
 
 import SearchLottieIcon from '@/components/common/SearchLottieIcon';
+
+const searchFilters = [
+    { label: 'All', value: 'all', Icon: FiGrid },
+    { label: 'Videos', value: 'video', Icon: FiPlayCircle },
+    { label: 'Articles', value: 'article', Icon: FiFileText },
+] as const;
 
 export default function ExploreSection(): ReactElement {
     return (
         <section
             aria-labelledby="explore-heading"
-            className="relative isolate flex min-h-120 w-full items-center overflow-hidden sm:min-h-150 lg:min-h-170"
+            className="relative isolate flex min-h-140 w-full items-center overflow-hidden sm:min-h-150 lg:min-h-170"
         >
             <Image
                 src="/assets/images/backgrounds/BG.jpg"
@@ -28,7 +35,7 @@ export default function ExploreSection(): ReactElement {
                 aria-hidden="true"
             />
 
-            <div className="mx-auto w-full max-w-6xl px-5 pb-20 lg:pt-6 sm:pt-5 pt-13 text-center sm:px-8">
+            <div className="mx-auto w-full max-w-6xl px-5 pb-20 lg:pt-8 sm:pt-5 pt-13 text-center sm:px-8">
                 <div className="mx-auto max-w-5xl">
 
                     <h2
@@ -48,31 +55,57 @@ export default function ExploreSection(): ReactElement {
                     action="/search"
                     method="get"
                     role="search"
-                    className="mx-auto mt-5 flex max-w-3xl items-center rounded-2xl border border-white/40 bg-white/95 p-1.5 shadow-[0_24px_70px_-22px_rgba(15,23,42,0.8)] backdrop-blur-md transition focus-within:border-[#F47421] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#F47421]/60 sm:p-2"
+                    className="mx-auto mt-5 max-w-5xl"
                 >
-                    <label htmlFor="explore-search" className="sr-only">
-                        Search Handa Pilipinas
-                    </label>
-                    <span className="grid size-11 shrink-0 place-items-center text-slate-400 sm:size-12" aria-hidden="true">
-                        <svg className="size-5 sm:size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m21 21-4.35-4.35m1.35-5.4A6.75 6.75 0 1 1 4.5 11.25a6.75 6.75 0 0 1 13.5 0Z" />
-                        </svg>
-                    </span>
-                    <input
-                        id="explore-search"
-                        name="q"
-                        type="search"
-                        placeholder="What would you like to explore?"
-                        autoComplete="off"
-                        className="min-w-0 flex-1 bg-transparent px-1 py-3 text-sm font-medium text-slate-900 outline-none placeholder:font-normal placeholder:text-slate-500 sm:px-2 sm:text-base"
-                    />
-                    <button
-                        type="submit"
-                        className="flex shrink-0 items-center gap-2 rounded-xl bg-linear-to-br from-[#ED1E24] to-[#F47421] px-4 py-3 text-sm font-bold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ED1E24] sm:px-7 sm:text-base"
-                    >
-                        <SearchLottieIcon />
-                        <span className="hidden sm:inline">Search</span>
-                    </button>
+                    <div className="flex items-center rounded-full border-3 border-[#F47421] bg-white/95 p-1.5 shadow-[0_24px_70px_-22px_rgba(15,23,42,0.8)] backdrop-blur-md transition focus-within:border-[#F47421] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#F47421]/60 sm:p-2">
+                        <label htmlFor="explore-search" className="sr-only">
+                            Search Handa Pilipinas
+                        </label>
+                        <span className="grid size-11 shrink-0 place-items-center text-slate-400 sm:size-12" aria-hidden="true">
+                            <svg className="size-5 sm:size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m21 21-4.35-4.35m1.35-5.4A6.75 6.75 0 1 1 4.5 11.25a6.75 6.75 0 0 1 13.5 0Z" />
+                            </svg>
+                        </span>
+                        <input
+                            id="explore-search"
+                            name="q"
+                            type="search"
+                            placeholder="What would you like to explore?"
+                            autoComplete="off"
+                            className="min-w-0 flex-1 bg-transparent px-1 py-3 text-sm font-medium text-slate-900 outline-none placeholder:font-normal placeholder:text-slate-500 sm:px-2 sm:text-base placeholder:tracking-wide"
+                        />
+                        <button
+                            type="submit"
+                            className="flex shrink-0 items-center gap-2 rounded-full bg-linear-to-br from-[#ED1E24] to-[#F47421] px-4 py-3 text-sm font-bold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ED1E24] sm:px-7 sm:text-base"
+                        >
+                            <SearchLottieIcon />
+                            <span className="hidden sm:inline">Search</span>
+                        </button>
+                    </div>
+
+                    <fieldset className="mt-3 flex justify-center">
+                        <legend className="sr-only">Filter search results by content type</legend>
+                        <div className="grid grid-cols-3  p-1 sm:gap-2 gap-0">
+                            {searchFilters.map(({ label, value, Icon }) => (
+                                <label
+                                    key={value}
+                                    className="cursor-pointer"
+                                >
+                                    <input
+                                        type="radio"
+                                        name="filter_type"
+                                        value={value}
+                                        defaultChecked={value === 'all'}
+                                        className="peer sr-only"
+                                    />
+                                    <span className="flex items-center justify-center gap-1.5 rounded-full border border-transparent  px-3 py-2 text-xs font-semibold text-white/75 transition-all hover:bg-white/10 hover:text-white peer-checked:scale-103 peer-checked:border-white/50 peer-checked:bg-linear-to-br peer-checked:from-[#ED1E24] peer-checked:to-[#F47421] peer-checked:text-white peer-checked:shadow-md peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-white sm:gap-2 sm:px-5 sm:text-sm">
+                                        <Icon className="shrink-0 text-sm sm:text-base" aria-hidden="true" />
+                                        <span>{label}</span>
+                                    </span>
+                                </label>
+                            ))}
+                        </div>
+                    </fieldset>
                 </form>
             </div>
         </section>

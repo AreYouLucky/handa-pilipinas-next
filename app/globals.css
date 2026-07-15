@@ -43,3 +43,45 @@ body {
 .bg-accent {
   background-color: #262626; /* Tailwind's blue-700 */
 }
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-slim {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(237, 30, 36, 0.75) transparent;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+.scroll-slim::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scroll-slim::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-slim::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ed1e24, #f47421);
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.scroll-slim:hover::-webkit-scrollbar-thumb {
+  background: #ed1e24;
+  background-clip: padding-box;
+}
+
+.scroll-slim::-webkit-scrollbar-corner {
+  background: transparent;
+}

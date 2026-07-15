@@ -126,7 +126,7 @@ export function Navbar(): ReactElement {
             : 'border-transparent bg-transparent shadow-none'
           }`}
       >
-        <div className="mx-auto grid h-20  grid-cols-[1fr_auto] items-center gap-4 px-4 sm:px-6 lg:grid-cols-[1fr_auto_1fr] lg:px-8">
+        <div className="mx-auto grid h-18  grid-cols-[1fr_auto] items-center gap-4 px-4 sm:px-6 lg:grid-cols-[1fr_auto_1fr] lg:px-8">
           <Link
             href="/"
             aria-label="Handa Pilipinas home"
