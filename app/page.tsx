@@ -1,4 +1,5 @@
 import ExploreSection from "@/components/home-partials/ExploreSection";
+import Partners from "@/components/home-partials/Partners";
 import References from "@/components/home-partials/References";
 import ArticleSection from "@/components/home-partials/articles/ArticleSection";
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <ExploreSection />
       <ArticleSection />
       <References />
+      <Partners />
     </div>
   );
 }

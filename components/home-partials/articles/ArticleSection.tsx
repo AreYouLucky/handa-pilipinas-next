@@ -106,7 +106,8 @@ export default function ArticleSection(): ReactElement | null {
               className="flex items-center gap-3 text-lg font-extrabold uppercase tracking-[0.16em] text-[#ED1E24]"
             >
               <LuNewspaper aria-hidden="true" />
-              Latest Articles
+              
+              Recent Stories
             </h2>
           </div>
 
