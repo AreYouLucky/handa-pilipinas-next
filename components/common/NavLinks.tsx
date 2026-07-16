@@ -35,7 +35,7 @@ export default function NavLinks({
             onMouseEnter={() => setActive(true)}
             className={
                 isMobile
-                    ? `group flex items-center gap-3 rounded-full px-4 py-3 text-base font-semibold transition-all ${isActive
+                    ? `group flex items-center gap-3 rounded-full px-4 py-1 text-base font-semibold transition-all ${isActive
                         ? 'bg-red-50 text-[#ED1E24]'
                         : 'text-slate-600 hover:bg-slate-50 hover:text-slate-950'
                     }`

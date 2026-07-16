@@ -24,7 +24,7 @@ export default function ExploreSection(): ReactElement {
                 sizes="100vw"
                 className="-z-20 object-cover object-center"
             />
-
+{/* 
             <div className="absolute inset-0 -z-10 bg-[#ED1E24]/10" aria-hidden="true" />
             <div
                 className="absolute inset-0 -z-10 bg-linear-to-b from-[#ED1E24]/30 via-[#F47421]/10 to-[#ED1E24]/65"
@@ -33,7 +33,7 @@ export default function ExploreSection(): ReactElement {
             <div
                 className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-linear-to-t from-[#ED1E24]/35 to-transparent"
                 aria-hidden="true"
-            />
+            /> */}
 
             <div className="mx-auto w-full max-w-6xl px-5 pb-20 lg:pt-8 sm:pt-5 pt-13 text-center sm:px-8">
                 <div className="mx-auto max-w-5xl">
